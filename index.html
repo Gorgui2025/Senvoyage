@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SenVoyage — Transport inter-régions Sénégal</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Barre de couleurs drapeau sénégalais -->
+  <div class="stripe"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-icon">🚌</div>
+      <span>Sen<span class="accent">Voyage</span></span>
+    </div>
+    <span class="navbar-tagline">Voyagez partout au Sénégal</span>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Voyagez entre les régions du<br><span class="highlight">Sénégal</span> en toute sérénité</h1>
+      <p>Trouvez les meilleurs transports inter-régions, comparez les prix et réservez en quelques clics.</p>
+    </div>
+  </section>
+
+  <!-- ========== FORMULAIRE DE RECHERCHE ========== -->
+  <main>
+    <div class="search-card">
+      <h2>Trouver un trajet</h2>
+
+      <!-- Message d'erreur global -->
+      <div id="form-alert" class="alert alert-error" style="display:none;"></div>
+
+      <form id="search-form" novalidate>
+        <div class="form-grid">
+
+          <!-- Départ -->
+          <div class="form-group">
+            <label for="from">📍 Lieu de départ</label>
+            <select id="from" name="from">
+              <!-- Rempli par JavaScript -->
+            </select>
+            <span class="error-msg"></span>
+          </div>
+
+          <!-- Arrivée -->
+          <div class="form-group">
+            <label for="to">🏁 Lieu d'arrivée</label>
+            <select id="to" name="to">
+              <!-- Rempli par JavaScript -->
+            </select>
+            <span class="error-msg"></span>
+          </div>
+
+          <!-- Date de voyage -->
+          <div class="form-group date-row">
+            <label for="travel-date">📅 Date de voyage</label>
+            <input
+              type="date"
+              id="travel-date"
+              name="travel-date"
+              min=""
+            />
+            <button type="button" id="today-btn" class="today-btn">⚡ Partir aujourd'hui</button>
+            <span class="error-msg"></span>
+          </div>
+
+          <!-- Nombre de passagers -->
+          <div class="form-group">
+            <label for="passengers">💺 Passagers</label>
+            <select id="passengers" name="passengers">
+              <option value="1">1 passager</option>
+              <option value="2">2 passagers</option>
+              <option value="3">3 passagers</option>
+              <option value="4">4 passagers</option>
+              <option value="5">5 passagers</option>
+            </select>
+          </div>
+
+          <!-- Bouton de recherche -->
+          <div class="search-btn-row">
+            <button type="submit" class="btn btn-primary">
+              🔍 Rechercher les trajets
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+    <!-- ========== SECTION AVANTAGES ========== -->
+    <section class="features-section">
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">🚌</div>
+          <h3>4 Compagnies</h3>
+          <p>Dakar Express, Sénégal Voyage, Téranga Bus, Sahel Transport</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📍</div>
+          <h3>14 Régions</h3>
+          <p>Toutes les régions du Sénégal couvertes</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Réservation rapide</h3>
+          <p>En moins de 2 minutes, votre place est réservée</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== GUIDE D'UTILISATION ========== -->
+    <section class="guide-section">
+
+      <div class="guide-header">
+        <h2>📖 Guide d'utilisation</h2>
+        <p>Réservez votre trajet en 4 étapes simples</p>
+      </div>
+
+      <!-- Étapes -->
+      <div class="guide-steps">
+
+        <div class="guide-step">
+          <div class="step-number">1</div>
+          <div class="step-icon">🔍</div>
+          <h3>Recherchez votre trajet</h3>
+          <p>Sélectionnez votre <strong>ville de départ</strong> et votre <strong>ville d'arrivée</strong> parmi les 14 régions du Sénégal. Choisissez une date et indiquez le nombre de passagers, puis cliquez sur <em>"Rechercher les trajets"</em>.</p>
+          <ul class="step-tips">
+            <li>💡 Cliquez sur <strong>"Partir aujourd'hui"</strong> pour sélectionner la date du jour en un clic</li>
+            <li>💡 Vous pouvez réserver jusqu'à <strong>5 passagers</strong> en une seule fois</li>
+          </ul>
+        </div>
+
+        <div class="guide-connector">→</div>
+
+        <div class="guide-step">
+          <div class="step-number">2</div>
+          <div class="step-icon">🗂️</div>
+          <h3>Comparez les trajets</h3>
+          <p>Consultez les <strong>3 à 5 trajets disponibles</strong> affichés par ordre d'heure de départ. Pour chaque trajet vous verrez le nom de la compagnie, l'heure de départ, la durée et le <strong>prix en FCFA</strong>.</p>
+          <ul class="step-tips">
+            <li>💡 Les trajets sont triés par <strong>heure de départ croissante</strong></li>
+            <li>💡 Le nombre de places disponibles est indiqué sur chaque carte</li>
+          </ul>
+        </div>
+
+        <div class="guide-connector">→</div>
+
+        <div class="guide-step">
+          <div class="step-number">3</div>
+          <div class="step-icon">📝</div>
+          <h3>Remplissez le formulaire</h3>
+          <p>Cliquez sur <em>"Réserver"</em> sur le trajet de votre choix. Saisissez vos informations : <strong>prénom</strong>, <strong>nom</strong> et <strong>numéro de téléphone</strong> au format sénégalais, puis confirmez.</p>
+          <ul class="step-tips">
+            <li>💡 Numéro valide : <strong>7X XXX XX XX</strong> (ex : 77 123 45 67)</li>
+            <li>💡 Vérifiez le récapitulatif du trajet avant de confirmer</li>
+          </ul>
+        </div>
+
+        <div class="guide-connector">→</div>
+
+        <div class="guide-step">
+          <div class="step-number">4</div>
+          <div class="step-icon">✅</div>
+          <h3>Récupérez votre billet</h3>
+          <p>Votre <strong>numéro de réservation unique</strong> (format <em>SV-2024-XXXX</em>) est généré automatiquement. Vous pouvez ensuite <strong>imprimer votre billet</strong> en PDF ou <strong>partager la confirmation</strong> via WhatsApp.</p>
+          <ul class="step-tips">
+            <li>💡 Cliquez sur <strong>"Imprimer le billet"</strong> pour sauvegarder en PDF</li>
+            <li>💡 Partagez votre réservation via <strong>WhatsApp</strong> en un clic</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- FAQ rapide -->
+      <div class="guide-faq">
+        <h3>❓ Questions fréquentes</h3>
+        <div class="faq-grid">
+
+          <details class="faq-item">
+            <summary>Puis-je modifier ma réservation après confirmation ?</summary>
+            <p>Cette version de SenVoyage est une simulation. Pour modifier une réservation, cliquez sur <strong>"Nouvelle réservation"</strong> depuis la page de confirmation pour recommencer le processus.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Comment fonctionne le paiement ?</summary>
+            <p>SenVoyage est une application de <strong>simulation de réservation</strong>. Aucun paiement réel n'est effectué. Les prix affichés sont indicatifs et servent uniquement à illustrer le service.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Les horaires et prix sont-ils réels ?</summary>
+            <p>Les trajets, horaires et prix sont <strong>générés aléatoirement</strong> à titre de démonstration. Ils s'inspirent des tarifs et durées réels des lignes inter-régionales sénégalaises.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Comment imprimer mon billet en PDF ?</summary>
+            <p>Depuis la page de confirmation, cliquez sur <strong>"Imprimer le billet"</strong>. Dans la boîte de dialogue qui s'ouvre, choisissez <strong>"Enregistrer en PDF"</strong> comme destination d'impression.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Combien de passagers puis-je réserver ?</summary>
+            <p>Vous pouvez réserver entre <strong>1 et 5 passagers</strong> par trajet. Le prix total est automatiquement calculé en multipliant le prix unitaire par le nombre de passagers.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Quelles régions sont disponibles ?</summary>
+            <p>Les <strong>14 régions officielles du Sénégal</strong> sont disponibles : Dakar, Thiès, Diourbel, Fatick, Kaolack, Kaffrine, Kolda, Louga, Matam, Saint-Louis, Sédhiou, Tambacounda, Ziguinchor et Kédougou.</p>
+          </details>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    &copy; 2026 <strong>SenVoyage</strong> — Transport inter-régions au Sénégal 🇸🇳
+  </footer>
+
+  <!-- ========== LOADER ========== -->
+  <div class="loader-overlay" id="loader">
+    <div class="spinner"></div>
+    <p>Recherche des trajets disponibles…</p>
+  </div>
+
+  <script src="app.js?v=3"></script>
+
+</body>
+</html>

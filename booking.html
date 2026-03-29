@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SenVoyage — Réservation</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="stripe"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-icon">🚌</div>
+      <span>Sen<span class="accent">Voyage</span></span>
+    </div>
+    <span class="navbar-tagline">Voyagez partout au Sénégal</span>
+  </nav>
+
+  <!-- ========== CONTENU ========== -->
+  <main class="page-container">
+
+    <!-- Fil d'Ariane -->
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span>›</span>
+      <a href="results.html">Résultats</a>
+      <span>›</span>
+      <span>Réservation</span>
+    </div>
+
+    <!-- Titre -->
+    <div class="page-title">
+      <h1>📋 Finaliser la réservation</h1>
+      <p>Renseignez vos informations pour confirmer votre place.</p>
+    </div>
+
+    <!-- Grille : Formulaire + Récapitulatif -->
+    <div class="booking-grid">
+
+      <!-- ---- Formulaire passager ---- -->
+      <div class="booking-form-card">
+        <div class="card-title">👤 Informations du passager</div>
+
+        <form id="booking-form" class="booking-form" novalidate>
+
+          <div class="form-group">
+            <label for="first-name">Prénom</label>
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              placeholder="Ex : Mamadou"
+              autocomplete="given-name"
+            />
+            <span class="error-msg"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="last-name">Nom</label>
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              placeholder="Ex : Diallo"
+              autocomplete="family-name"
+            />
+            <span class="error-msg"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">📞 Numéro de téléphone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Ex : 77 123 45 67"
+              autocomplete="tel"
+            />
+            <span class="error-msg"></span>
+          </div>
+
+          <!-- Actions -->
+          <div class="booking-confirm-row" style="margin-top:1.5rem;">
+            <a href="results.html" class="btn btn-back">← Retour</a>
+            <button type="submit" class="btn btn-confirm">
+              ✅ Confirmer la réservation
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- ---- Récapitulatif du trajet ---- -->
+      <div class="booking-summary-card">
+        <div class="card-title">🚌 Récapitulatif du trajet</div>
+        <div id="booking-summary">
+          <!-- Rempli par JavaScript -->
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    &copy; 2026 <strong>SenVoyage</strong> — Transport inter-régions au Sénégal 🇸🇳
+  </footer>
+
+  <script src="app.js?v=3"></script>
+
+</body>
+</html>

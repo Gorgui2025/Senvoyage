@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SenVoyage — Résultats de recherche</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="stripe"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-icon">🚌</div>
+      <span>Sen<span class="accent">Voyage</span></span>
+    </div>
+    <span class="navbar-tagline">Voyagez partout au Sénégal</span>
+  </nav>
+
+  <!-- ========== CONTENU ========== -->
+  <main class="page-container">
+
+    <!-- Fil d'Ariane -->
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span>›</span>
+      <span>Résultats</span>
+    </div>
+
+    <!-- Titre de la page -->
+    <div class="page-title">
+      <h1>🚌 Trajets disponibles</h1>
+      <p>Choisissez le trajet qui vous convient et réservez votre place.</p>
+    </div>
+
+    <!-- Résumé de la recherche -->
+    <div class="search-summary" id="search-summary">
+      <!-- Rempli par JavaScript -->
+    </div>
+
+    <!-- Liste des trajets -->
+    <div class="trips-list" id="trips-container">
+      <!-- Rempli dynamiquement par JavaScript -->
+      <div class="no-results">
+        <div class="icon">⏳</div>
+        <h3>Chargement des trajets…</h3>
+      </div>
+    </div>
+
+    <!-- Bouton retour -->
+    <div style="margin-top:2rem; display:flex; justify-content:flex-start;">
+      <a href="index.html" class="btn btn-back">← Modifier la recherche</a>
+    </div>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    &copy; 2026 <strong>SenVoyage</strong> — Transport inter-régions au Sénégal 🇸🇳
+  </footer>
+
+  <!-- ========== LOADER ========== -->
+  <div class="loader-overlay" id="loader">
+    <div class="spinner"></div>
+    <p>Recherche des trajets en cours…</p>
+  </div>
+
+  <script src="app.js?v=3"></script>
+
+</body>
+</html>
