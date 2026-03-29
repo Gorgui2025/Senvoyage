@@ -809,9 +809,46 @@ function buildWhatsAppMessage(booking) {
 
 
 /* ============================================================
+   NAVBAR — Burger menu mobile
+   ============================================================ */
+function initNavbar() {
+  const toggle = document.getElementById('nav-toggle');
+  const menu   = document.getElementById('nav-menu');
+  if (!toggle || !menu) return;
+
+  // Ouvre / ferme le menu au clic sur le burger
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = menu.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
+
+  // Ferme le menu au clic sur un lien
+  menu.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-label', 'Ouvrir le menu');
+    });
+  });
+
+  // Ferme le menu si clic en dehors de la navbar
+  document.addEventListener('click', (e) => {
+    if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+      toggle.classList.remove('open');
+    }
+  });
+}
+
+/* ============================================================
    INITIALISATION — détection de la page courante
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
+  // Navbar commune à toutes les pages
+  initNavbar();
+
   const page = window.location.pathname.split('/').pop() || 'index.html';
 
   if (page === 'index.html' || page === '' || page === '/') {
